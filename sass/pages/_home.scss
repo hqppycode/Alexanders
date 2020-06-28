@@ -1,0 +1,152 @@
+// Background video, darked overlay, and textured overlay  **********************************************************************************
+#hero {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  // background: url(placeholder.jpg) no-repeat;
+  // background-size: cover;
+}
+
+#hero::after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(#000000, 0.5);
+}
+
+#hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#hero .texture {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../../img/texture.png);
+}
+
+// Hero content  **********************************************************************************
+.container {
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+  color: $color-white;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta {
+  font-size: 7rem;
+}
+
+.button {
+  border: 1px solid #fff;
+  font-family: 'Inter', sans-serif;
+  color: $color-white;
+  text-decoration: none;
+  display: block;
+  padding: 1rem 2rem;
+}
+
+// Navigation bar  **********************************************************************************
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.navigation {
+  display: grid;
+  grid-template-columns: 15rem auto;
+  color: red;
+}
+
+.navigation__image {
+  height: 8rem;
+  //margin-left: 2rem;
+  //margin-top: 1rem;
+}
+
+.navigation__main {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-flow: row nowrap;
+  list-style: none;
+}
+
+.navigation__link {
+  text-decoration: none;
+  color: $color-white;
+  text-transform: uppercase;
+  margin: 0 3rem;
+}
+
+.navigation__link--margin-right {
+  margin-right: 5rem;
+}
+
+// Main  **********************************************************************************
+
+.main {
+  margin-top: 2rem;
+}
+
+.main__text {
+  font-weight: 900;
+  text-align: center;
+}
+
+// Media Queries  **********************************************************************************
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1280px) {
+  .cta {
+    font-size: 5rem;
+    color: rebeccapurple;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .cta {
+    font-size: 3.5rem;
+    color: orange;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .cta {
+    font-size: 3rem;
+    color: green;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .cta {
+    font-size: 3rem;
+    color: blue;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .cta {
+    font-size: 3rem;
+    color: red;
+  }
+}

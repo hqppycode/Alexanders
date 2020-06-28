@@ -1,0 +1,47 @@
+// Universal reset
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+ // font-size: 62.5%;  // Defines 1rem at 10px, but will scale with user input
+}
+
+body {
+  // font-size: $default-font-size;
+  
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: $color-primary;
+}
+
+h1 {
+  font-size: calc(24px + (50 - 24) * ((100vw - 300px) / (1600 - 300)));
+  // font-size: calc(40px + (50 - 40) * ((100vw - 300px) / (1600 - 300)));
+  font-size: -webkit-calc(87.5% + 0.25 * (100vw - 8000%) / 40); /* 2 */
+  font-size: -ms-calc(0.875em + 0.25 * (100vw - 80em) / 40);
+}
+
+h2 {
+  font-size: calc(32px + (40 - 32) * ((100vw - 300px) / (1600 - 300)));
+}
+
+h3 {
+  font-size: calc(20px + (24 - 20) * ((100vw - 300px) / (1600 - 300)));
+}
+
+p {
+  font-size: calc(18px + (20 - 18) * ((100vw - 300px) / (1600 - 300)));
+  line-height: 1.4;
+}
+
+p.hammer {
+  font-size: calc(20px + (24 - 20) * ((100vw - 300px) / (1600 - 300)));
+  font-weight: bold;
+}
