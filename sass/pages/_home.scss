@@ -46,7 +46,7 @@
 }
 
 .cta {
-  font-size: 7rem;
+  font-weight: 900;
 }
 
 .button {
@@ -65,16 +65,15 @@
   left: 0;
   width: 100%;
 }
+
 .navigation {
   display: grid;
   grid-template-columns: 15rem auto;
-  color: red;
 }
 
 .navigation__image {
-  height: 8rem;
-  //margin-left: 2rem;
-  //margin-top: 1rem;
+  height: 6rem;
+  margin-left: 0.5rem;
 }
 
 .navigation__main {
@@ -89,15 +88,19 @@
   text-decoration: none;
   color: $color-white;
   text-transform: uppercase;
-  margin: 0 3rem;
+  margin: 0 2.5rem;
 }
 
 .navigation__link--margin-right {
-  margin-right: 5rem;
+  margin-right: 3rem;
+}
+
+// Hero Text  **********************************************************************************
+.cta {
+  text-align: center;
 }
 
 // Main  **********************************************************************************
-
 .main {
   margin-top: 2rem;
 }
@@ -105,48 +108,185 @@
 .main__text {
   font-weight: 900;
   text-align: center;
+  font-family: 'Dancing Script', cursive;
+  margin-bottom: 2rem;
+}
+
+.expertise {
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+}
+
+// Images  **********************************************************************************
+.three-images {
+  display: flex;
+  margin-right: 6vw;
+  margin-left: 6vw;
+}
+
+.three-images > *:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.three-images img {
+  display: block;
+  width: 100%;
+}
+
+.three-images__div {
+  // Correcting scaling of flex items
+  flex: 1 1 0;
+  position: relative;
+}
+
+.three-images__text--1 {
+  position: absolute;
+  top: 82%;
+  left: 36%;
+  font-family: 'Dancing Script', cursive;
+  color: #f4f4f4;
+  font-size: 5vw;
+}
+
+.three-images__rel--2 {
+  // Setting position of "Social" text
+  top: 30%;
+  left: 8%;
+}
+
+.three-images__rel--3 {
+  // Setting position of "Corporate" text
+  top: 65%;
+  left: 10%;
+}
+
+// Vision  **********************************************************************************
+
+// Being Alternating Grid  *************************************************************************
+
+.alternating-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'a   b'
+    'c   d';
+  align-items: center;
+  margin: 0 6vw;
+  // gap: 1rem;
+}
+
+.alternating-grid p {
+  color: #333;
+}
+
+.vision {
+  grid-area: a;
+}
+
+.grid-image-1 {
+  grid-area: b;
+}
+
+.who-are-we {
+  grid-area: d;
+}
+
+.who-are-we__headline {
+  margin-left: -0.5rem;
+}
+
+.vision__headline {
+  margin-left: -0.5rem;
+}
+
+.grid-image-2 {
+  grid-area: c;
+}
+
+.grid-text {
+  margin: 0 6vw;
+}
+
+.spacer {
+  height: 1000px;
 }
 
 // Media Queries  **********************************************************************************
 
-
-
-
-
-
-
-
 @media only screen and (max-width: 1280px) {
-  .cta {
-    font-size: 5rem;
-    color: rebeccapurple;
+  .three-images {
+    margin-right: 4vw;
+    margin-left: 4vw;
+  }
+
+  .alternating-grid {
+    margin: 0 4vw;
+  }
+  .grid-text {
+    margin: 0 4vw;
   }
 }
 
-@media only screen and (max-width: 1024px) {
-  .cta {
-    font-size: 3.5rem;
-    color: orange;
+@media only screen and (max-width: 1020px) {
+  .alternating-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'a'
+      'b'
+      'd'
+      'c';
+  }
+
+  .navigation__link {
+    margin: 0 1.3rem;
+  }
+
+  .who-are-we__headline {
+    margin-left: 0;
+  }
+
+  .vision__headline {
+    margin-left: 0;
+  }
+  .grid-text {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .who-are-we__headline {
+    margin-left: 0;
+  }
+
+  .vision__headline {
+    margin-left: 0;
+  }
+
+  .grid-text {
+    margin-left: 0;
+  }
+  .three-images > *:not(:last-child) {
+    margin-right: 1rem;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .cta {
-    font-size: 3rem;
-    color: green;
+  .navigation__link {
+    margin: 0 0.9rem;
   }
 }
 
 @media only screen and (max-width: 640px) {
-  .cta {
-    font-size: 3rem;
-    color: blue;
+  .three-images {
+    flex-flow: column;
+  }
+  .three-images__text--1 {
+    font-size: 15vw;
+  }
+  .three-images > *:not(:last-child) {
+    margin-right: 0;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  .cta {
-    font-size: 3rem;
-    color: red;
-  }
 }

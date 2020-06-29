@@ -7,6 +7,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700;900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="dist/css/main.css" />
     <title>Alexander's</title>
   </head>
@@ -25,7 +29,7 @@
         width="x"
         height="y"
       >
-        <source src="img/video.mp4" type="video/mp4" />
+        <source src="img/compressed-small.mp4" type="video/mp4" />
       </video>
     </div>
 
@@ -48,7 +52,7 @@
             <a href="#" class="navigation__link">Gallery</a>
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link">About</a>
+            <a href="about.html" class="navigation__link">About</a>
           </li>
           <li class="navigation__item">
             <a href="#" class="navigation__link navigation__link--margin-right"
@@ -60,17 +64,90 @@
     </header>
 
     <div class="container">
-      <h1 class="cta">Great Events</h1>
-      <a href="#" class="button">Magical</a>
+      <h1 class="cta">Create the event you want</h1>
+      <a href="#" class="button">Get Started</a>
     </div>
 
     <main class="main">
-      <h1 class="main__text">
-        Breathtaking events for all of life's special events.
-      </h1>
+      <h2 class="main__text">
+        Your Taste <br />
+        <span class="expertise">is our pleasure</span>
+      </h2>
 
-      <p class="paragraph">With more than 25 years of experience, Alexander's the Great Events specializes in wedding catering, special occasion catering, decor, and floral. Whether you are planning a wedding, holiday party, reunion, or anniversary party, Alexander's the Great Events can help make your event spectacular. Mike Alexander and his team are committed to making your dream wedding or event a reality. If you dream it, we can make it happen! Our team treats every event as if it were our own and at Alexander's the Great Events, we want to give everyone the opportunity to have a worry-free and wonderful day. There are many catering companies but none can compare to the price, quality, and service our company provides. Every event should be a great event!</p>
+      <!-- <div class="three-images">
+        <img src="/img/wedding1.jpg" alt="Wedding" />
+        <img
+          src="/img/lime-cocktail-drink-with-two-straws-1187766.jpg"
+          alt="Drink"
+        />
+        <img
+          src="/img/man-wearing-black-notched-lapel-blazer-2955375.jpg"
+          alt="Man in suit"
+        />
+      </div> -->
+
+      <!-- Begin image section ********************************************************************* -->
+      <div class="three-images">
+        <div class="three-images__div">
+          <img src="/img/wedding-compressed.jpg" alt="Wedding" />
+          <span class="three-images__text--1 three-images__rel--1"
+            >Wedding</span
+          >
+        </div>
+
+        <div class="three-images__div">
+          <img src="/img/lime-compressed.jpg" alt="Drink" />
+          <span class="three-images__text--1 three-images__rel--2">Social</span>
+        </div>
+
+        <div class="three-images__div">
+          <img src="/img/corporate-compressed.jpg" alt="Man in suit" />
+          <span class="three-images__text--1 three-images__rel--3"
+            >Corporate</span
+          >
+        </div>
+      </div>
+
+      <!-- Begin alternating grid section ********************************************************************* -->
+
+      <div class="alternating-grid">
+        <div class="vision grid-text">
+          <h2 class="vision__headline">Your Vision</h2>
+          <p class="vision__text">
+            Whether you are planning a wedding, holiday party, reunion, or
+            anniversary party, Alexander's the Great Events can help make your
+            event spectacular. Mike Alexander and his team are committed to
+            making your dream wedding or event a reality. If you dream it, we
+            can make it happen!
+          </p>
+        </div>
+
+        <img
+          src="img/hand.jpg"
+          alt="Hand drawing the words create"
+          class="grid-image-1"
+        />
+
+        <img
+          src="img/fruit.jpg"
+          alt="Chefs prepping food"
+          class="grid-image-2"
+        />
+
+        <div class="who-are-we grid-text">
+          <h2 class="who-are-we__headline">Who are we?</h2>
+          <p class="who-are-we__text">
+            With more than 25 years of experience, Alexander's the Great Events
+            specializes in wedding catering, special occasion catering, decor,
+            and floral. Our team treats every event as if it were our own and at
+            Alexander's the Great Events, we want to give everyone the
+            opportunity to have a worry-free and wonderful day.
+          </p>
+        </div>
+      </div>
     </main>
+
+    <div class="spacer"></div>
 
     <script src="js/app.js"></script>
   </body>

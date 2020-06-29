@@ -7,41 +7,49 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: 100%;
- // font-size: 62.5%;  // Defines 1rem at 10px, but will scale with user input
-}
-
 body {
-  // font-size: $default-font-size;
-  
+  font-size: calc(
+    21px + (30 - 21) * ((100vw - 768px) / (1600 - 768))
+  ); //setting base font size fluidly
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  line-height: 1.7;
   color: $color-primary;
 }
 
+p {
+  line-height: 1.6;
+}
+
+img:not(.navigation__image) {
+  width: 100%;
+  display: block;
+}
+
 h1 {
-  font-size: calc(24px + (50 - 24) * ((100vw - 300px) / (1600 - 300)));
-  // font-size: calc(40px + (50 - 40) * ((100vw - 300px) / (1600 - 300)));
-  font-size: -webkit-calc(87.5% + 0.25 * (100vw - 8000%) / 40); /* 2 */
-  font-size: -ms-calc(0.875em + 0.25 * (100vw - 80em) / 40);
+  font-size: 3em; //em value will change fluidly as base font size changes
 }
 
 h2 {
-  font-size: calc(32px + (40 - 32) * ((100vw - 300px) / (1600 - 300)));
-}
-
-h3 {
-  font-size: calc(20px + (24 - 20) * ((100vw - 300px) / (1600 - 300)));
+  font-size: 2.3em;
+  font-family: 'Dancing Script', cursive;
 }
 
 p {
-  font-size: calc(18px + (20 - 18) * ((100vw - 300px) / (1600 - 300)));
-  line-height: 1.4;
+  font-size: 0.7em;
 }
 
-p.hammer {
-  font-size: calc(20px + (24 - 20) * ((100vw - 300px) / (1600 - 300)));
-  font-weight: bold;
+a {
+  font-size: 0.6em;
+}
+
+// Fluid font size min and max
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 21px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  body {
+    font-size: 30px;
+  }
 }
