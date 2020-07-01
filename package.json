@@ -7,5 +7,24 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Richard",
-  "license": "ISC"
+  "license": "ISC",
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "~/../css"
+    }
+  ],
+  "liveSassCompile.settings.excludeList": [
+    "**/node_modules/**",
+    ".vscode/**"
+  ],
+  "liveSassCompile.settings.generateMap": true,
+  "liveSassCompile.settings.autoprefix": null
 }
+
+
+
+
+
+

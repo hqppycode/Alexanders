@@ -40,22 +40,37 @@
   display: flex;
   flex-flow: column;
   height: 100vh;
+  z-index: -5;
   color: $color-white;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .cta {
   font-weight: 900;
+  font-size: 7vw;
+}
+
+.cta-event {
+  color: $color-blue;
 }
 
 .button {
-  border: 1px solid #fff;
-  font-family: 'Inter', sans-serif;
+  border: 1px solid #f4f4f4;
+  border-radius: 3px;
+  font-family: $font-primary;
   color: $color-white;
   text-decoration: none;
   display: block;
   padding: 1rem 2rem;
+  margin-top: 2rem;
+  transition: transform 0.3s;
+  // background-color: #ff1476;
+}
+
+.button:hover {
+  transform: scale(1.05);
 }
 
 // Navigation bar  **********************************************************************************
@@ -71,9 +86,22 @@
   grid-template-columns: 15rem auto;
 }
 
-.navigation__image {
-  height: 6rem;
-  margin-left: 0.5rem;
+@font-face {
+  font-family: font-logo;
+  src: url(../../img/AlexBrush-Regular.ttf);
+}
+
+.logoText {
+  font-family: font-logo;
+  font-size: 4rem;
+  text-decoration: none;
+  color: #f4f4f4;
+}
+
+.logoWrap {
+  margin-left: 2rem;
+  margin-top: 1rem;
+  text-decoration: none;
 }
 
 .navigation__main {
@@ -87,12 +115,19 @@
 .navigation__link {
   text-decoration: none;
   color: $color-white;
-  text-transform: uppercase;
-  margin: 0 2.5rem;
+  //text-transform: uppercase;
+  margin: 2rem 2.5rem 3rem 0;
+  display: inline-block;
+  transition: all 0.2s;
 }
 
 .navigation__link--margin-right {
   margin-right: 3rem;
+}
+
+.navigation__link:hover {
+  transform: scale(1.1);
+  color: #fff;
 }
 
 // Hero Text  **********************************************************************************
@@ -108,13 +143,15 @@
 .main__text {
   font-weight: 900;
   text-align: center;
-  font-family: 'Dancing Script', cursive;
+  font-family: $font-cursive;
+  color: #ff1476;
   margin-bottom: 2rem;
 }
 
 .expertise {
-  font-family: 'Inter', sans-serif;
+  font-family: $font-primary;
   text-transform: uppercase;
+  color: #000;
 }
 
 // Images  **********************************************************************************
@@ -143,7 +180,7 @@
   position: absolute;
   top: 82%;
   left: 36%;
-  font-family: 'Dancing Script', cursive;
+  font-family: $font-cursive;
   color: #f4f4f4;
   font-size: 5vw;
 }
@@ -177,7 +214,7 @@
 }
 
 .alternating-grid p {
-  color: #333;
+  color: $color-dark-grey;
 }
 
 .vision {
@@ -209,7 +246,57 @@
 }
 
 .spacer {
-  height: 1000px;
+  height: 400px;
+}
+
+// Footer  **********************************************************************************
+
+.footer {
+  margin: 0 auto 2rem auto;
+  margin-bottom: 2rem;
+}
+
+.footer__logo {
+  color: $color-dark-grey;
+  font-family: font-logo;
+  font-size: 2em;
+  line-height: 0.8;
+}
+
+.contact,
+.address {
+  font-family: $font-primary;
+  color: $color-dark-grey;
+  font-size: 0.7em;
+}
+
+.contact-button {
+  border-radius: 3px;
+  font-family: $font-primary;
+  color: $color-white;
+  text-decoration: none;
+  display: block;
+  width: 7.5em;
+  padding: 1rem 2rem;
+  margin: auto;
+  transition: transform 0.3s;
+  background-color: $color-pink;
+  text-align: center;
+}
+
+.contact-button:hover {
+  transform: scale(1.05);
+}
+
+.footer__tagline {
+  font-size: 3em;
+  text-align: center;
+  margin: 0 auto 1rem auto;
+}
+
+.footer__address {
+  text-align: center;
+  margin-top: 3rem;
 }
 
 // Media Queries  **********************************************************************************
@@ -226,6 +313,14 @@
   .grid-text {
     margin: 0 4vw;
   }
+
+  a {
+    font-size: 0.7em;
+  }
+
+  .navigation__link {
+    margin: 2.5rem 2.5rem 3rem 0;
+  }
 }
 
 @media only screen and (max-width: 1020px) {
@@ -236,6 +331,10 @@
       'b'
       'd'
       'c';
+  }
+
+  a {
+    font-size: 0.8em;
   }
 
   .navigation__link {
@@ -270,13 +369,10 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 765px) {
   .navigation__link {
     margin: 0 0.9rem;
   }
-}
-
-@media only screen and (max-width: 640px) {
   .three-images {
     flex-flow: column;
   }
@@ -286,7 +382,21 @@
   .three-images > *:not(:last-child) {
     margin-right: 0;
   }
+  .footer__tagline {
+    font-size: 8vw;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .three-images {
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 
 @media only screen and (max-width: 480px) {
+  .three-images {
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
