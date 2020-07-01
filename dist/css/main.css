@@ -90,6 +90,10 @@ a {
   background: url(../../img/texture.png);
 }
 
+.spacer {
+  height: 500px;
+}
+
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -251,6 +255,8 @@ a {
       -ms-flex: 1 1 0px;
           flex: 1 1 0;
   position: relative;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .three-images__text--1 {
@@ -270,6 +276,23 @@ a {
 .three-images__rel--3 {
   top: 65%;
   left: 10%;
+}
+
+.three-images__div:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
+}
+
+.three-images:hover > .three-images__div {
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+.three-images:hover > .three-images__div:hover {
+  -webkit-filter: blur(0);
+          filter: blur(0);
 }
 
 .alternating-grid {

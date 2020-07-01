@@ -35,6 +35,10 @@
   background: url(../../img/texture.png);
 }
 
+.spacer {
+  height: 500px;
+}
+
 // Hero content  **********************************************************************************
 .container {
   display: flex;
@@ -168,12 +172,15 @@
 .three-images img {
   display: block;
   width: 100%;
+  // border-radius: 6px;
 }
 
 .three-images__div {
   // Correcting scaling of flex items
   flex: 1 1 0;
   position: relative;
+  //
+  transition: all 0.3s;
 }
 
 .three-images__text--1 {
@@ -197,7 +204,20 @@
   left: 10%;
 }
 
-// Vision  **********************************************************************************
+.three-images__div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+    0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+    0 16px 16px rgba(0, 0, 0, 0.12);
+}
+
+.three-images:hover > .three-images__div {
+  filter: blur(3px);
+}
+
+.three-images:hover > .three-images__div:hover {
+  filter: blur(0);
+}
 
 // Being Alternating Grid  *************************************************************************
 
