@@ -35,10 +35,6 @@
   background: url(../../img/texture.png);
 }
 
-.spacer {
-  height: 500px;
-}
-
 // Hero content  **********************************************************************************
 .container {
   display: flex;
@@ -57,7 +53,10 @@
 }
 
 .cta-event {
-  color: $color-blue;
+  font-family: $font-cursive;
+  color: $color-pink;
+  transform: translateY(-8%);
+  display: inline-block;
 }
 
 .button {
@@ -139,57 +138,67 @@
   text-align: center;
 }
 
-// Main  **********************************************************************************
-.main {
-  margin-top: 2rem;
-}
-
 .main__text {
   font-weight: 900;
   text-align: center;
   font-family: $font-cursive;
   color: #ff1476;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
-.expertise {
-  font-family: $font-primary;
-  text-transform: uppercase;
-  color: #000;
+.main__text--span {
+  color: $color-primary;
+}
+
+// Main  **********************************************************************************
+.main {
+  margin-top: 3rem;
 }
 
 // Images  **********************************************************************************
 .three-images {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  grid-template-rows: auto;
+  grid-template-areas: 'a   b   c   d';
+  gap: 1rem;
   margin-right: 6vw;
   margin-left: 6vw;
+  margin-bottom: 3rem;
 }
 
-.three-images > *:not(:last-child) {
-  margin-right: 2rem;
+.options-1 {
+  grid-area: a;
+}
+
+.options-2 {
+  grid-area: b;
+}
+
+.options-3 {
+  grid-area: c;
+}
+
+.options-4 {
+  grid-area: d;
+}
+
+.three-images__div {
+  position: relative;
+  transition: all 0.3s;
 }
 
 .three-images img {
   display: block;
-  width: 100%;
-  // border-radius: 6px;
-}
-
-.three-images__div {
-  // Correcting scaling of flex items
-  flex: 1 1 0;
-  position: relative;
-  //
-  transition: all 0.3s;
 }
 
 .three-images__text--1 {
   position: absolute;
-  top: 82%;
-  left: 36%;
+  top: 80%;
+  left: 30%;
   font-family: $font-cursive;
   color: #f4f4f4;
-  font-size: 5vw;
+  font-size: 4vw;
 }
 
 .three-images__rel--2 {
@@ -202,6 +211,12 @@
   // Setting position of "Corporate" text
   top: 65%;
   left: 10%;
+}
+
+.three-images__rel--4 {
+  // Setting position of "Birthday" text
+  top: 30%;
+  left: 20%;
 }
 
 .three-images__div:hover {
@@ -227,10 +242,10 @@
   grid-template-rows: auto;
   grid-template-areas:
     'a   b'
-    'c   d';
+    'c   d'
+    'e   f';
   align-items: center;
   margin: 0 6vw;
-  // gap: 1rem;
 }
 
 .alternating-grid p {
@@ -265,15 +280,59 @@
   margin: 0 6vw;
 }
 
-.spacer {
-  height: 400px;
+// Reviews  **********************************************************************************
+
+.spacer-reviews {
+  height: 7em;
+}
+
+.reviews-container {
+  grid-area: e;
+  position: relative;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  11.11% {
+    opacity: 1;
+  }
+  33.33% {
+    opacity: 1;
+  }
+  44.44% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadein p {
+  opacity: 0;
+  animation-name: fade;
+  animation-duration: 21s;
+  animation-iteration-count: infinite;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.fadein p:nth-child(1) {
+  animation-delay: 0s;
+}
+.fadein p:nth-child(2) {
+  animation-delay: 7s;
+}
+.fadein p:nth-child(3) {
+  animation-delay: 14s;
 }
 
 // Footer  **********************************************************************************
 
 .footer {
-  margin: 0 auto 2rem auto;
-  margin-bottom: 2rem;
+  margin: 3rem auto 2rem auto;
 }
 
 .footer__logo {
@@ -322,11 +381,6 @@
 // Media Queries  **********************************************************************************
 
 @media only screen and (max-width: 1280px) {
-  .three-images {
-    margin-right: 4vw;
-    margin-left: 4vw;
-  }
-
   .alternating-grid {
     margin: 0 4vw;
   }
@@ -341,16 +395,40 @@
   .navigation__link {
     margin: 2.5rem 2.5rem 3rem 0;
   }
+  .three-images {
+    margin-right: 5vw;
+    margin-left: 5vw;
+    gap: 0.5rem;
+  }
 }
 
 @media only screen and (max-width: 1020px) {
+  .three-images {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'a b'
+      'c d';
+    margin-right: 6vw;
+    margin-left: 6vw;
+    margin-bottom: 1rem;
+  }
+
+  .three-images__text--1 {
+    font-size: 7vw;
+  }
+
   .alternating-grid {
     grid-template-columns: 1fr;
     grid-template-areas:
       'a'
       'b'
       'd'
-      'c';
+      'c'
+      'e';
+  }
+
+  .spacer-reviews {
+    height: 3.5em;
   }
 
   a {
@@ -384,39 +462,81 @@
   .grid-text {
     margin-left: 0;
   }
-  .three-images > *:not(:last-child) {
-    margin-right: 1rem;
-  }
 }
 
 @media only screen and (max-width: 765px) {
   .navigation__link {
     margin: 0 0.9rem;
   }
-  .three-images {
-    flex-flow: column;
-  }
-  .three-images__text--1 {
-    font-size: 15vw;
-  }
-  .three-images > *:not(:last-child) {
-    margin-right: 0;
-  }
+
   .footer__tagline {
     font-size: 8vw;
+  }
+
+  .main__text {
+    margin-bottom: 2rem;
   }
 }
 
 @media only screen and (max-width: 640px) {
   .three-images {
-    margin-right: 0;
-    margin-left: 0;
+    margin-right: 2vw;
+    margin-left: 2vw;
+  }
+
+  .spacer-reviews {
+    height: 5em;
   }
 }
 
 @media only screen and (max-width: 480px) {
   .three-images {
-    margin-right: 0;
-    margin-left: 0;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'a'
+      'b'
+      'c'
+      'd';
+    margin: 0;
+    gap: 0rem;
+  }
+
+  .grid-text {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .alternating-grid {
+    margin: 0;
+  }
+
+  .three-images__text--1 {
+    font-size: 15vw;
+  }
+
+  .main__text {
+    font-size: 10vw;
+  }
+
+  .spacer-reviews {
+    height: 7em;
+  }
+
+  .cta {
+    font-size: 8vw;
+  }
+}
+
+// I'm having to do so many media queries to the fact that the info in this grid is absolutely positioned and so doesn't count toward the height of the box
+
+@media only screen and (max-width: 390px) {
+  .spacer-reviews {
+    height: 7.5em;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .spacer-reviews {
+    height: 8.5em;
   }
 }
