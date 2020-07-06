@@ -73,7 +73,7 @@
 }
 
 .button:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 // Navigation bar  **********************************************************************************
@@ -166,6 +166,7 @@
   margin-right: 6vw;
   margin-left: 6vw;
   margin-bottom: 3rem;
+  // transition: all 1s;
 }
 
 .options-1 {
@@ -186,11 +187,12 @@
 
 .three-images__div {
   position: relative;
-  transition: all 0.3s;
+  transition: filter 0.2s;
 }
 
 .three-images img {
   display: block;
+  border-radius: 3px;
 }
 
 .three-images__text--1 {
@@ -222,18 +224,7 @@
 }
 
 .three-images__div:hover {
-  z-index: 15;
-  transform: scale(1.05);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1), 1px 2px 2px rgba(0, 0, 0, 0.08),
-    2px 4px 4px rgba(0, 0, 0, 0.06), 3px 6px 6px rgba(0, 0, 0, 0.04);
-}
-
-.three-images:hover > .three-images__div {
-  filter: blur(3px);
-}
-
-.three-images:hover > .three-images__div:hover {
-  filter: blur(0);
+  filter: brightness(115%);
 }
 
 // Being Alternating Grid  *************************************************************************
@@ -480,6 +471,10 @@
     font-size: 8vw;
   }
 
+  .footer__tagline.footer__tagline-small {
+    font-size: 7vw;
+  }
+
   .main__text {
     margin-bottom: 2rem;
   }
@@ -498,6 +493,10 @@
 
   .spacer-reviews {
     height: 5em;
+  }
+
+  .about-us-images {
+    grid-template-columns: 1fr;
   }
 }
 
